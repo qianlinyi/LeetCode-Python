@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def makesquare(self, matchsticks: List[int]) -> bool:
         length = sum(matchsticks)

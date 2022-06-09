@@ -1,5 +1,5 @@
 import random
-import math
+from typing import List
 
 
 class Solution:
@@ -11,7 +11,7 @@ class Solution:
 
     def randPoint(self) -> List[float]:
         while True:
-            x, y = random.uniform(-self.radius, self.radius), random.uniform(-self.radius, self.radius)  # 满足均匀分布
+            x, y = random.uniform(-self.radius, self.radius), random.uniform(-self.radius, self.radius)  # 满足均匀随机分布
             if x ** 2 + y ** 2 <= self.radius ** 2:
                 return [x + self.x_center, y + self.y_center]
 

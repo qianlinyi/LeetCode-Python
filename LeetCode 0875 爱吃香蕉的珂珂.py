@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
         def judge(k: int) -> bool:
@@ -6,11 +9,11 @@ class Solution:
                 hours += (pile + k - 1) // k
             return hours <= h
 
-        l, r = 1, max(piles)
-        while l <= r:
-            mid = (l + r) // 2
+        left, right = 1, max(piles)
+        while left <= right:
+            mid = (left + right) // 2
             if judge(mid):
-                r = mid - 1
+                right = mid - 1
             else:
-                l = mid + 1
-        return l
+                left = mid + 1
+        return left

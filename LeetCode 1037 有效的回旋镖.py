@@ -1,4 +1,4 @@
-import math
+from typing import List
 
 
 class Solution:
