@@ -2,7 +2,7 @@ from typing import List
 
 
 # 二维
-class Solution:
+class Solution1:
     def minCost(self, costs: List[List[int]]) -> int:
         n = len(costs)
         dp = [[2000 for _ in range(3)] for _ in range(n)]
@@ -15,7 +15,7 @@ class Solution:
 
 
 # 一维
-class Solution:
+class Solution2:
     def minCost(self, costs: List[List[int]]) -> int:
         dp = costs[0]
         for i in range(1, len(costs)):

@@ -17,7 +17,7 @@ class Solution:
         if not root:
             return ans
         while q:
-            mx, siz, tmp, q = -inf, len(q), q, []
+            mx, tmp, q = -inf, q, []
             for node in tmp:
                 mx = max(mx, node.val)
                 if node.left:
