@@ -1,3 +1,6 @@
+from typing import List
+
+
 class MagicDictionary:
 
     def __init__(self):

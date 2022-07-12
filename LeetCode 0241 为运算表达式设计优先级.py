@@ -11,15 +11,15 @@ class Solution:
         for i, c in enumerate(expression):
             if c in ['+', '-', '*']:
                 # 分解，遇到运算符计算左右两侧的结果集
-                left = self.diffWaysToCompute(expression[:i])
-                right = self.diffWaysToCompute(expression[i + 1:])
+                leftpart = self.diffWaysToCompute(expression[:i])
+                rightpart = self.diffWaysToCompute(expression[i + 1:])
                 # 合并，根据运算符合并子问题的解
-                for l in left:
-                    for r in right:
+                for left in leftpart:
+                    for right in rightpart:
                         if c == '+':
-                            ans.append(l + r)
+                            ans.append(left + right)
                         elif c == '-':
-                            ans.append(l - r)
+                            ans.append(left - right)
                         else:
-                            ans.append(l * r)
+                            ans.append(left * right)
         return ans

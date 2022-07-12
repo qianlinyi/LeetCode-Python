@@ -1,3 +1,7 @@
+from math import inf
+from typing import List
+
+
 class Solution:
     def cherryPickup(self, grid: List[List[int]]) -> int:
         n = len(grid)
@@ -24,4 +28,3 @@ class Solution:
                         res += grid[x2][y2]
                     f[k][x1][x2] = res
         return max(f[-1][-1][-1], 0)
-

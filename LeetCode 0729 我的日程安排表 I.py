@@ -1,6 +1,4 @@
 # 直接遍历
-from bisect import bisect_left
-
 from sortedcontainers import SortedDict
 
 
@@ -44,29 +42,29 @@ class MyCalendar3:
         self.tree = set()
         self.lazy = set()
 
-    def update(self, start: int, end: int, l: int, r: int, i: int) -> None:
-        if r < start or end < l:
+    def update(self, start: int, end: int, left: int, right: int, i: int) -> None:
+        if right < start or end < left:
             return
-        if start <= l and r <= end:
+        if start <= left and right <= end:
             self.tree.add(i)
             self.lazy.add(i)
         else:
-            mid = l + r >> 1
-            self.update(start, end, l, mid, i << 1)
-            self.update(start, end, mid + 1, r, i << 1 | 1)
+            mid = left + right >> 1
+            self.update(start, end, left, mid, i << 1)
+            self.update(start, end, mid + 1, right, i << 1 | 1)
             self.tree.add(i)
             if i << 1 in self.lazy and i << 1 | 1 in self.lazy:
                 self.lazy.add(i)
 
-    def query(self, start: int, end: int, l: int, r: int, i: int) -> bool:
-        if r < start or end < l:
+    def query(self, start: int, end: int, left: int, right: int, i: int) -> bool:
+        if right < start or end < left:
             return False
         if i in self.lazy:
             return True
-        if start <= l and r <= end:
+        if start <= left and right <= end:
             return i in self.tree
-        mid = l + r >> 1
-        return self.query(start, end, l, mid, i << 1) or self.query(start, end, mid + 1, r, i << 1 | 1)
+        mid = left + right >> 1
+        return self.query(start, end, left, mid, i << 1) or self.query(start, end, mid + 1, right, i << 1 | 1)
 
     def book(self, start: int, end: int) -> bool:
         if self.query(start, end - 1, 0, 10 ** 9, 1):
