@@ -1,3 +1,5 @@
+from random import random
+
 MAX_LEVEL = 32
 P_FACTOR = 0.25
 
