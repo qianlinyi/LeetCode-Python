@@ -2,6 +2,7 @@ from queue import PriorityQueue
 from typing import List
 
 
+# 优先队列
 class Solution:
     def mostBooked(self, n: int, meetings: List[List[int]]) -> int:
         q, free = PriorityQueue(), PriorityQueue()
