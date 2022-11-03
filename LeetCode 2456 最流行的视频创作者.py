@@ -1,5 +1,4 @@
 from collections import defaultdict
-from typing import List
 
 
 class Solution:
@@ -14,7 +13,7 @@ class Solution:
             cnt[creators[i]] += views[i]
             mx = max(mx, cnt[creators[i]])
             videos[creators[i]].append(ids[i])
-            mp[(creators[i], ids[i])] = views[i]
+            mp[(creators[i], ids[i])] += views[i]
         for k, v in cnt.items():
             if mx == v:
                 num = -1
