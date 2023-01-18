@@ -1,3 +1,4 @@
+剑指 Offer II 115 重建序列
 LeetCode 0030 串联所有单词的子串
 LeetCode 0715 Range 模块
 LeetCode 0731 我的日程安排表 II
@@ -10,7 +11,6 @@ LeetCode 0850 矩形面积 II
 LeetCode 0940 不同的子序列 II
 LeetCode 1206 设计跳表
 LeetCode 1224 最大相等频率
-剑指 Offer II 115 重建序列
 LeetCode 1658 将 x 减到 0 的最小操作数
 LeetCode 1799 N 次操作后的最大分数和
 LeetCode 1739 放置盒子
@@ -18,4 +18,5 @@ LeetCode 0855 考场就座
 LeetCode 1802 有界数组中指定下标处的最大值
 LeetCode 1803 统计异或值在范围内的数对有多少
 LeetCode 1819 序列中不同最大公约数的数目
+LeetCode 1825 求出 MK 平均值
 
