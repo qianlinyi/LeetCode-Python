@@ -1,5 +1,5 @@
 class Solution:
-    def isSubsequence(self, s: str, t: str) -> bool:
+    def isSubsequence2(self, s: str, t: str) -> bool:
         n, m = len(s), len(t)
         dp = [[0] * 26 for _ in range(m)]
         dp.append([m] * 26)
@@ -12,3 +12,12 @@ class Solution:
                 return False
             add = dp[add][ord(s[i]) - ord('a')] + 1
         return True
+
+    def isSubsequence(self, s: str, t: str) -> bool:
+        n, m = len(s), len(t)
+        i = j = 0
+        while i < n and j < m:
+            if s[i] == t[j]:
+                i += 1
+            j += 1
+        return i == n
