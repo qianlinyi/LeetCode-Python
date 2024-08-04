@@ -9,8 +9,7 @@ import collections
 
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        q = collections.deque()
-        ans = []
+        ans, q = [], []
         if root is None:
             return ans
         q.append(root)
